@@ -1,46 +1,33 @@
-# Домашнее задание к занятию "8.4 Работа с Roles"
+Elasticsearch
+=========
 
-## Подготовка к выполнению
-1. Создайте два пустых публичных репозитория в любом своём проекте: kibana-role и filebeat-role.
-2. Добавьте публичную часть своего ключа к своему профилю в github.
+Simple download binaries from official website and install elasticsearch.
 
-## Основная часть
+Role Variables
+--------------
 
-Наша основная цель - разбить наш playbook на отдельные roles. Задача: сделать roles для elastic, kibana, filebeat и написать playbook для использования этих ролей. Ожидаемый результат: существуют два ваших репозитория с roles и один репозиторий с playbook.
+There is only two variables that you can redefine in your playbook.
 
-1. Создать в старой версии playbook файл `requirements.yml` и заполнить его следующим содержимым:
-   ```yaml
-   ---
-     - src: git@github.com:netology-code/mnt-homeworks-ansible.git
-       scm: git
-       version: "2.0.0"
-       name: elastic 
-   ```
-2. При помощи `ansible-galaxy` скачать себе эту роль.
-3. Создать новый каталог с ролью при помощи `ansible-galaxy role init kibana-role`.
-4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
-5. Перенести нужные шаблоны конфигов в `templates`.
-6. Создать новый каталог с ролью при помощи `ansible-galaxy role init filebeat-role`.
-7. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
-8. Перенести нужные шаблоны конфигов в `templates`.
-9. Описать в `README.md` обе роли и их параметры.
-10. Выложите все roles в репозитории. Проставьте тэги, используя семантическую нумерацию.
-11. Добавьте roles в `requirements.yml` в playbook.
-12. Переработайте playbook на использование roles.
-13. Выложите playbook в репозиторий.
-14. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
+```yaml
+elastic_version: "7.10.1" # Use for download only this version of elastic
+elastic_home: "/opt/elastic/{{ elastic_version }}" # Use for unpackage distro and create ES_HOME variable
+```
 
-## Необязательная часть
+Example Playbook
+----------------
 
-1. Проделайте схожие манипуляции для создания роли logstash.
-2. Создайте дополнительный набор tasks, который позволяет обновлять стек ELK.
-3. Убедитесь в работоспособности своего стека: установите logstash на свой хост с elasticsearch, настройте конфиги logstash и filebeat так, чтобы они взаимодействовали друг с другом и elasticsearch корректно.
-4. Выложите logstash-role в репозиторий. В ответ приведите ссылку.
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
----
+```yaml
+- hosts: all
+  roles:
+      - elastic
+```
 
-### Как оформить ДЗ?
+License
+-------
 
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+BSD
 
----
+Author Information
+------------------
