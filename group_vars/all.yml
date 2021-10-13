@@ -1,0 +1,4 @@
+version: 7.15.0
+elasticsearch_version: "{{ version }}"
+kibana_version: "{{ version }}"
+filebeat_version: "{{ version }}"

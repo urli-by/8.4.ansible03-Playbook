@@ -1,5 +1,13 @@
 ---
   - src: git@github.com:urli-by/8.4.ansible03-Playbook.git
     scm: git
-    version: main
+    version: 1.0.0
     name: elasticsearch_role
+  - src: git@github.com:urli-by/8.4.ansible02-KibanaRole.git
+    scm: git
+    version: 1.0.0
+    name: kibana_role
+  - src: git@github.com:urli-by/8.4.ansible01-filebeatRole.git
+    scm: git
+    version: 1.0.0
+    name: filebeat_role
