@@ -3,5 +3,5 @@
   hosts: elasticsearch
   roles:
     - elasticsearch_role
-    - kibana_role
-    - filebeat_role
+#    - kibana_role
+#    - filebeat_role

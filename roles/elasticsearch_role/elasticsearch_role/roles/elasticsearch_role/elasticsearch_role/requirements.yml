@@ -1,5 +1,5 @@
 ---
-  - src: git@github.com:netology-code/mnt-homeworks-ansible.git
+  - src: git@github.com:urli-by/8.4.ansible03-Playbook.git
     scm: git
-    version: "2.0.0"
-    name: elastic 
+    version: main
+    name: elasticsearch_role

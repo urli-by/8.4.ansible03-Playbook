@@ -3,5 +3,10 @@
   hosts: elasticsearch
   roles:
     - elasticsearch_role
-#    - kibana_role
-#    - filebeat_role
+- name: Install Kibana
+  hosts: Kibana
+  roles:
+    - kibana_role
+- name: install filebeat_role
+  hosts: filebeat    
+    - filebeat_role
