@@ -1,0 +1,7 @@
+molecule
+molecule[podman]
+molecule_podman
+podman
+selinux
+ansible-lint
+yamllint
